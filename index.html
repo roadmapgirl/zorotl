@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zorotl Meme Coin | Solana's Funniest Token</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .chat-bubble {
+            position: relative;
+            border-radius: 15px;
+            padding: 10px 15px;
+            margin: 8px 0;
+            max-width: 80%;
+        }
+        
+        .user-bubble {
+            background-color: #4f46e5;
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 5px;
+        }
+        
+        .other-bubble {
+            background-color: #e0e7ff;
+            color: #312e81;
+            align-self: flex-start;
+            border-bottom-left-radius: 5px;
+        }
+        
+        .bot-bubble {
+            background-color: #10b981;
+            color: white;
+            align-self: flex-start;
+            border-bottom-left-radius: 5px;
+        }
+        
+        .typing-indicator {
+            display: flex;
+            padding: 10px;
+        }
+        
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #666;
+            border-radius: 50%;
+            margin: 0 2px;
+            animation: typing 1.4s infinite ease-in-out;
+        }
+        
+        .typing-dot:nth-child(1) { animation-delay: 0s; }
+        .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+        .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+        
+        @keyframes typing {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-5px); }
+        }
+        
+        #chatContainer {
+            scrollbar-width: thin;
+            scrollbar-color: #4f46e5 #f1f1f1;
+        }
+        
+        #chatContainer::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        #chatContainer::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        #chatContainer::-webkit-scrollbar-thumb {
+            background-color: #4f46e5;
+            border-radius: 20px;
+        }
+        
+        .zorotl-gradient {
+            background: linear-gradient(135deg, #4f46e5 0%, #10b981 100%);
+        }
+        
+        .coin-pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="zorotl-gradient text-white p-4 sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="coin-pulse bg-white rounded-full w-8 h-8 flex items-center justify-center">
+                    <span class="text-indigo-600 font-bold">Z</span>
+                </div>
+                <span class="text-2xl font-bold">Zorotl Coin</span>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#about" class="hover:underline transition">About</a>
+                <a href="#tokenomics" class="hover:underline transition">Tokenomics</a>
+                <a href="#buy" class="hover:underline transition">How to Buy</a>
+                <a href="#chat" class="hover:underline transition">Community Chat</a>
+            </div>
+            <button class="md:hidden text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-16 px-4 zorotl-gradient text-white">
+        <div class="container mx-auto text-center">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6">
+                <span class="coin-pulse inline-block">ZOROTL</span> COIN
+            </h1>
+            <p class="text-xl mb-8">
+                Remembrance of the first retarded animation music video Eiffel 65 - Blue through meme coin
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#buy" class="bg-white text-indigo-600 px-8 py-3 rounded-full text-lg font-bold hover:bg-gray-100 transition">
+                    <i class="fas fa-coins mr-2"></i> Buy Now
+                </a>
+                <a href="#chat" class="bg-indigo-800 text-white px-8 py-3 rounded-full text-lg font-bold hover:bg-indigo-900 transition">
+                    <i class="fas fa-comments mr-2"></i> Join Chat
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-12 px-4 bg-white">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl font-bold text-center mb-8 text-indigo-600">
+                <i class="fas fa-info-circle mr-2"></i> WHAT IS ZOROTL?
+            </h2>
+            
+            <div class="bg-indigo-50 p-6 rounded-xl">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/3">
+                        <img src="zorotl.jpg" alt="Zorotl Mascot" class="rounded-full w-full max-w-xs border-4 border-indigo-300">
+                    </div>
+                    <div class="md:w-2/3">
+                        <p class="mb-4 text-gray-800">
+                            Zorotl is the most ridiculous meme coin to ever grace the Solana blockchain. Born from a late-night coding session and too much caffeine, Zorotl represents... well, we're not really sure what it represents, but it's fun!
+                        </p>
+                        <p class="mb-4 text-gray-800">
+                            Our mascot, the mighty Zorotl, is a mythical creature that definitely wasn't drawn in 5 minutes. It symbolizes... something profound about the crypto space. Probably.
+                        </p>
+                        <p class="text-gray-800">
+                            <i class="fas fa-exclamation-triangle text-indigo-600 mr-2"></i> Warning: This coin has no utility, no purpose, and no reason to exist. That's what makes it special!
+                        </p>
+                        <p class="text-gray-800">
+                            
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="about" class="py-12 px-4 bg-white">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl font-bold text-center mb-8 text-indigo-600">
+                <i class="fas fa-volume-up mr-2"></i> HERE'S THE LYRICS MAKE SURE TO REMEMBER
+            </h2>
+            <div class="bg-indigo-50 p-6 rounded-xl">
+                <div class="flex flex-col items-center">
+                    <div class="w-full md:w-4/5">
+                        <p class="mb-4 text-gray-800 whitespace-pre-line text-center">
+    Yo, listen up here's a story  
+    About a little guy  
+    That lives in a blue world  
+    And all day and all night  
+    And everything he sees is just blue  
+    Like him inside and outside  
+    
+    Blue his house  
+    With a blue little window  
+    And a blue Corvette  
+    And everything is blue for him  
+    And himself and everybody around  
+    Cause he ain't got nobody to listen to  
+    
+    I'm blue  
+    Da ba dee da ba di  
+    Da ba dee da ba di  
+    Da ba dee da ba di  
+    Da ba dee da ba di  
+    Da ba dee da ba di  
+    Da ba dee da ba di  
+    Da ba dee da ba di  
+    
+    I have a blue house  
+    With a blue window  
+    Blue is the colour of all that I wear  
+    Blue are the streets  
+    And all the trees are too  
+    I have a girlfriend and she is so blue  
+    
+    Blue are the people here  
+    That walk around  
+    Blue like my Corvette, it's in and outside  
+    Blue are the words I say  
+    And what I think  
+    Blue are the feelings  
+    That live inside me  
+    
+    I'm blue  
+    Da ba dee da ba di  
+    Da ba dee da ba di  
+    Da ba dee da ba di  
+    Da ba dee da ba di  
+    Da ba dee da ba di  
+    Da ba dee da ba di  
+    Da ba dee da ba di  
+    
+    I'm blue  
+    Da ba dee da ba di  
+    Da ba dee da ba di  
+    Da ba dee da ba di  
+    Da ba dee da ba di  
+    Da ba dee da ba di  
+    Da ba dee da ba di  
+    Da ba dee da ba di
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <!-- Tokenomics Section -->
+    <section id="tokenomics" class="py-12 px-4 bg-gray-100">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl font-bold text-center mb-8 text-indigo-600">
+                <i class="fas fa-chart-pie mr-2"></i> TOKENOMICS (KIND OF)
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                    <div class="text-5xl font-bold text-indigo-600 mb-2">69%</div>
+                    <h3 class="text-xl font-semibold mb-2">Liquidity Pool</h3>
+                    <p class="text-gray-600">Because nice.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                    <div class="text-5xl font-bold text-emerald-500 mb-2">20%</div>
+                    <h3 class="text-xl font-semibold mb-2">Community Rewards</h3>
+                    <p class="text-gray-600">For memes and stuff</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                    <div class="text-5xl font-bold text-amber-500 mb-2">11%</div>
+                    <h3 class="text-xl font-semibold mb-2">Team</h3>
+                    <p class="text-gray-600">Pizza money</p>
+                </div>
+            </div>
+            
+            <div class="mt-8 bg-white p-6 rounded-xl">
+                <h3 class="text-xl font-semibold mb-4 text-center text-indigo-600">Contract Address</h3>
+                <div class="bg-gray-100 p-3 rounded-lg overflow-x-auto">
+                    <code class="text-gray-800">Zorotl1a2b3c4d5e6f7g8h9i0jK1L2M3N4O5P6Q7R8S9T0</code>
+                </div>
+                <p class="text-sm text-gray-500 mt-2 text-center">(Don't actually send money to this address, it's fake)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Buy Section -->
+    <section id="buy" class="py-12 px-4 bg-white">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl font-bold text-center mb-8 text-indigo-600">
+                <i class="fas fa-shopping-cart mr-2"></i> HOW TO BUY (BUT WHY?)
+            </h2>
+            
+            <div class="bg-indigo-50 p-6 rounded-xl">
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <div class="bg-indigo-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1">1</div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Get Solana</h3>
+                            <p class="text-gray-700">Buy SOL from any reputable exchange. Or find some in your couch cushions.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-indigo-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1">2</div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Connect Wallet</h3>
+                            <p class="text-gray-700">Use Phantom, Solflare, or whatever wallet you trust with your questionable financial decisions.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-indigo-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1">3</div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Swap for Zorotl</h3>
+                            <p class="text-gray-700">On Raydium, Jupiter, or any DEX that hasn't blacklisted us yet (PUMPFUN).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-indigo-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1">4</div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Regret Life Choices</h3>
+                            <p class="text-gray-700">Optional but highly probable step in your meme coin journey.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8 text-center">
+                    <button class="bg-indigo-600 text-white px-8 py-3 rounded-full text-lg font-bold hover:bg-indigo-700 transition">
+                        <i class="fas fa-external-link-alt mr-2"></i> Fake Buy Button
+                    </button>
+                    <p class="text-sm text-gray-500 mt-2">This button doesn't actually do anything</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chat Section -->
+    <section id="chat" class="py-12 px-4 bg-gray-100">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl font-bold text-center mb-8 text-indigo-600">
+                <i class="fas fa-comments mr-2"></i> ZOROTL CHAT
+            </h2>
+            
+            <!-- Chat Container -->
+            <div class="bg-white rounded-xl shadow-xl overflow-hidden">
+                <!-- Chat Header -->
+                <div class="zorotl-gradient p-4 flex justify-between items-center">
+                    <div class="flex items-center">
+                        <div class="coin-pulse bg-white rounded-full w-6 h-6 flex items-center justify-center mr-2">
+                            <span class="text-indigo-600 font-bold text-sm">Z</span>
+                        </div>
+                        <span class="font-bold text-white">Zorotl Community Chat</span>
+                    </div>
+                    <div class="text-sm text-white">
+                        <span id="onlineCount">127</span> degenerates online
+                    </div>
+                </div>
+                
+                <!-- Chat Messages -->
+                <div id="chatContainer" class="h-96 overflow-y-auto p-4 flex flex-col bg-gray-50">
+                    <!-- Messages will be inserted here by JavaScript -->
+                    <div class="chat-bubble bot-bubble">
+                        <div class="font-bold">ZorotlBot</div>
+                        <div>Welcome to Zorotl chat! Type "da ba dee da ba da" to summon the magic!</div>
+                        <div class="text-xs text-gray-200 mt-1">Just now</div>
+                    </div>
+                    
+                    <div class="chat-bubble other-bubble">
+                        <div class="font-bold text-indigo-800">Anon123</div>
+                        <div>da ba dee da ba da</div>
+                        <div class="text-xs text-gray-500 mt-1">1 minute ago</div>
+                    </div>
+                    
+                    <div class="chat-bubble bot-bubble">
+                        <div class="font-bold">ZorotlBot</div>
+                        <div>da ba dee da ba da! 🎉✨ The magic is real!</div>
+                        <div class="text-xs text-gray-200 mt-1">1 minute ago</div>
+                    </div>
+                    
+                    <div class="chat-bubble other-bubble">
+                        <div class="font-bold text-indigo-800">ZoroFan99</div>
+                        <div>When lambo?</div>
+                        <div class="text-xs text-gray-500 mt-1">30 seconds ago</div>
+                    </div>
+                    
+                    <div class="chat-bubble bot-bubble">
+                        <div class="font-bold">ZorotlBot</div>
+                        <div>da ba dee da ba da means lambo soon! 🚗💨</div>
+                        <div class="text-xs text-gray-200 mt-1">25 seconds ago</div>
+                    </div>
+                    
+                    <div id="typingIndicator" class="typing-indicator hidden">
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                    </div>
+                </div>
+                
+                <!-- Nickname Input (shown if not set) -->
+                <div id="nicknameForm" class="bg-gray-200 p-4">
+                    <div class="mb-2 text-gray-700">Choose your anonymous nickname:</div>
+                    <div class="flex">
+                        <input type="text" id="nicknameInput" placeholder="e.g., ZoroLover42" 
+                               class="flex-grow px-4 py-2 rounded-l-lg bg-white text-gray-800 focus:outline-none">
+                        <button id="setNicknameBtn" class="bg-indigo-600 text-white px-4 py-2 rounded-r-lg font-bold">
+                            Set Name
+                        </button>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-1">You can change this anytime</p>
+                </div>
+                
+                <!-- Message Input (hidden until nickname is set) -->
+                <div id="messageForm" class="bg-gray-200 p-4 hidden">
+                    <div class="flex">
+                        <input type="text" id="messageInput" placeholder="Type your message... (try 'da ba dee da ba da')" 
+                               class="flex-grow px-4 py-2 rounded-l-lg bg-white text-gray-800 focus:outline-none">
+                        <button id="sendMessageBtn" class="bg-indigo-600 text-white px-4 py-2 rounded-r-lg font-bold">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-indigo-900 text-white py-8 px-4">
+        <div class="container mx-auto text-center">
+            <div class="flex justify-center mb-6">
+                <div class="coin-pulse bg-white rounded-full w-8 h-8 flex items-center justify-center mr-2">
+                    <span class="text-indigo-600 font-bold">Z</span>
+                </div>
+                <span class="text-2xl font-bold">Zorotl Coin</span>
+            </div>
+            <p class="mb-4">The meme coin that makes absolutely no sense</p>
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="#" class="text-xl hover:text-indigo-300"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-xl hover:text-indigo-300"><i class="fab fa-telegram"></i></a>
+                <a href="#" class="text-xl hover:text-indigo-300"><i class="fab fa-discord"></i></a>
+                <a href="#" class="text-xl hover:text-indigo-300"><i class="fab fa-github"></i></a>
+            </div>
+            <p class="text-sm text-indigo-300">© 2023 Zorotl Coin. Not financial advice. Not even regular advice.</p>
+        </div>
+        <audio id="backgroundMusic" src="dabadi.mp3" autoplay loop></audio>
+    </footer>
+
+    <script>
+        // Chat functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const nicknameForm = document.getElementById('nicknameForm');
+            const messageForm = document.getElementById('messageForm');
+            const nicknameInput = document.getElementById('nicknameInput');
+            const messageInput = document.getElementById('messageInput');
+            const chatContainer = document.getElementById('chatContainer');
+            const setNicknameBtn = document.getElementById('setNicknameBtn');
+            const sendMessageBtn = document.getElementById('sendMessageBtn');
+            const typingIndicator = document.getElementById('typingIndicator');
+            
+            // Load chat history from localStorage or initialize
+            let chatHistory = JSON.parse(localStorage.getItem('zorotlChat')) || [];
+            
+            // Display existing messages
+            chatHistory.forEach(msg => {
+                addMessage(msg.nickname, msg.message, msg.type, msg.timestamp, false);
+            });
+            
+            // Check if nickname is already set
+            const savedNickname = localStorage.getItem('zorotlNickname');
+            if (savedNickname) {
+                nicknameForm.classList.add('hidden');
+                messageForm.classList.remove('hidden');
+            }
+            
+            // Set nickname
+            setNicknameBtn.addEventListener('click', function() {
+                const nickname = nicknameInput.value.trim() || `Anon${Math.floor(Math.random() * 10000)}`;
+                localStorage.setItem('zorotlNickname', nickname);
+                nicknameForm.classList.add('hidden');
+                messageForm.classList.remove('hidden');
+                
+                // Add welcome message
+                addMessage('ZorotlBot', `Welcome ${nickname}! Type "da ba dee da ba da" for magic!`, 'bot');
+            });
+            
+            // Send message
+            sendMessageBtn.addEventListener('click', sendMessage);
+            messageInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+            
+            function sendMessage() {
+                const message = messageInput.value.trim();
+                if (message.length > 0) {
+                    const nickname = localStorage.getItem('zorotlNickname') || `Anon${Math.floor(Math.random() * 10000)}`;
+                    
+                    // Add user message
+                    addMessage(nickname, message, 'user');
+                    messageInput.value = '';
+                    
+                    // Save to chat history
+                    const newMsg = {
+                        nickname: nickname,
+                        message: message,
+                        type: 'user',
+                        timestamp: new Date().toISOString()
+                    };
+                    chatHistory.push(newMsg);
+                    localStorage.setItem('zorotlChat', JSON.stringify(chatHistory));
+                    
+                    // Simulate bot response
+                    setTimeout(() => {
+                        typingIndicator.classList.remove('hidden');
+                        setTimeout(() => {
+                            typingIndicator.classList.add('hidden');
+                            
+                            let botResponse = "";
+                            if (message.toLowerCase().includes('da ba dee da ba da')) {
+                                botResponse = "da ba dee da ba da! ✨ The magic is real!";
+                            } else if (message.toLowerCase().includes('lambo') || message.toLowerCase().includes('when moon')) {
+                                botResponse = "da ba dee da ba da means lambo soon! 🚗💨";
+                            } else if (message.toLowerCase().includes('solana') || message.toLowerCase().includes('sol')) {
+                                botResponse = "Solana goes brrrrr! ⚡";
+                            } else {
+                                const randomResponses = [
+                                    "da ba dee da ba da!",
+                                    "Zorotl approves this message!",
+                                    "Have you tried saying 'da ba dee da ba da'?",
+                                    "To the moon! 🚀",
+                                    "That's what she said!",
+                                    "Based.",
+                                    "This is the way.",
+                                    "WAGMI!",
+                                    "NGMI with that attitude.",
+                                    "Zorotl coin to $0.0001!"
+                                ];
+                                botResponse = randomResponses[Math.floor(Math.random() * randomResponses.length)];
+                            }
+                            
+                            addMessage('ZorotlBot', botResponse, 'bot');
+                            
+                            // Save bot response to history
+                            const botMsg = {
+                                nickname: 'ZorotlBot',
+                                message: botResponse,
+                                type: 'bot',
+                                timestamp: new Date().toISOString()
+                            };
+                            chatHistory.push(botMsg);
+                            localStorage.setItem('zorotlChat', JSON.stringify(chatHistory));
+                            
+                            // Simulate other users joining the conversation
+                            if (Math.random() > 0.6) { // 40% chance of another user joining
+                                setTimeout(() => {
+                                    typingIndicator.classList.remove('hidden');
+                                    setTimeout(() => {
+                                        typingIndicator.classList.add('hidden');
+                                        
+                                        const anonNames = [
+                                            'ZoroFan', 'Anon', 'Degenerate', 'CryptoNoob', 
+                                            'WenMoon', 'LamboSoon', 'SolanaMaxi', 'SBF'
+                                        ];
+                                        const randomName = anonNames[Math.floor(Math.random() * anonNames.length)] + 
+                                                          Math.floor(Math.random() * 100);
+                                        
+                                        const userMessages = [
+                                            "da ba dee da ba da!",
+                                            "When moon?",
+                                            "Zorotl to the moon!",
+                                            "I just bought more Zorotl!",
+                                            "This is the best meme coin ever!",
+                                            "How do I buy?",
+                                            "Scam?",
+                                            "Not financial advice but... BUY!",
+                                            "My wife left me because of Zorotl",
+                                            "Zorotl > Bitcoin"
+                                        ];
+                                        const randomMessage = userMessages[Math.floor(Math.random() * userMessages.length)];
+                                        
+                                        addMessage(randomName, randomMessage, 'other');
+                                        
+                                        // Save to chat history
+                                        const userMsg = {
+                                            nickname: randomName,
+                                            message: randomMessage,
+                                            type: 'other',
+                                            timestamp: new Date().toISOString()
+                                        };
+                                        chatHistory.push(userMsg);
+                                        localStorage.setItem('zorotlChat', JSON.stringify(chatHistory));
+                                    }, 1000);
+                                }, 1500);
+                            }
+                        }, 1500);
+                    }, 500);
+                }
+            }
+            
+            // Simulate online users count changing
+            setInterval(() => {
+                const onlineCount = document.getElementById('onlineCount');
+                const currentCount = parseInt(onlineCount.textContent);
+                const change = Math.floor(Math.random() * 10) - 3; // Random number between -3 and 6
+                const newCount = Math.max(10, currentCount + change);
+                onlineCount.textContent = newCount;
+            }, 5000);
+            
+            // Export chat to JSON file
+            function exportChatToJson() {
+                const dataStr = JSON.stringify(chatHistory, null, 2);
+                const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
+                
+                const exportFileDefaultName = 'zorotl-chat.json';
+                
+                const linkElement = document.createElement('a');
+                linkElement.setAttribute('href', dataUri);
+                linkElement.setAttribute('download', exportFileDefaultName);
+                linkElement.click();
+            }
+            
+            // Add export button (for demo purposes)
+        });
+        
+        // Add message to chat
+        function addMessage(nickname, message, type, timestamp = null, scroll = true) {
+            const bubble = document.createElement('div');
+            bubble.className = `chat-bubble ${type === 'user' ? 'user-bubble' : type === 'bot' ? 'bot-bubble' : 'other-bubble'}`;
+            
+            const nickElement = document.createElement('div');
+            nickElement.className = 'font-bold';
+            nickElement.textContent = nickname;
+            
+            const messageElement = document.createElement('div');
+            messageElement.textContent = message;
+            
+            const timeElement = document.createElement('div');
+            timeElement.className = `text-xs mt-1 ${type === 'user' || type === 'bot' ? 'text-gray-200' : 'text-gray-500'}`;
+            
+            if (timestamp) {
+                const timeDiff = Math.floor((new Date() - new Date(timestamp)) / 60000);
+                timeElement.textContent = timeDiff === 0 ? 'Just now' : 
+                                        timeDiff < 60 ? `${timeDiff} minute${timeDiff === 1 ? '' : 's'} ago` :
+                                        `${Math.floor(timeDiff / 60)} hour${Math.floor(timeDiff / 60) === 1 ? '' : 's'} ago`;
+            } else {
+                timeElement.textContent = 'Just now';
+            }
+            
+            bubble.appendChild(nickElement);
+            bubble.appendChild(messageElement);
+            bubble.appendChild(timeElement);
+            
+            document.getElementById('chatContainer').appendChild(bubble);
+            if (scroll) {
+                document.getElementById('chatContainer').scrollTop = document.getElementById('chatContainer').scrollHeight;
+            }
+        }
+    </script>
+</body>
+</html>
